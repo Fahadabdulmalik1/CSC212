@@ -1,4 +1,3 @@
-
 public class LinkedListADT implements Comparable {
 	public Contact head;
 	public Contact current;
@@ -25,6 +24,7 @@ public class LinkedListADT implements Comparable {
 		  current.next=tmp;
 		  
 	  }
+	  System.out.println("Contact added successfully!");
 		
 	}
 	@Override
@@ -56,23 +56,73 @@ public class LinkedListADT implements Comparable {
 		
 		
 	}
-	public void display(String val) {
+	public void SearchByName(String val) {
 		Contact tmp=head;
 		while(tmp!=null) {
 			if(tmp.contactName.equalsIgnoreCase(val)) {
 			System.out.println("Name: "+tmp.contactName);
-			System.out.println("Phone: "+tmp.phoneNumber);
+			System.out.println("PhoneNumber: "+tmp.phoneNumber);
 			System.out.println("Email: "+tmp.email);
 			System.out.println("Adress: "+tmp.address);
 			System.out.println("Birthday: "+tmp.birthday);
+			System.out.println("Notes: "+tmp.notes);
 			}
 			tmp=tmp.next;
 		}
 	}
-	
-	
-	
-	
+		public void SearchByPhoneNumber(String val) {
+			Contact tmp=head;
+			while(tmp!=null) {
+				if(tmp.phoneNumber.equals(val)) {
+				System.out.println("Name: "+tmp.contactName);
+				System.out.println("Phone: "+tmp.phoneNumber);
+				System.out.println("Email: "+tmp.email);
+				System.out.println("Adress: "+tmp.address);
+				System.out.println("Birthday: "+tmp.birthday);
+				System.out.println("Notes: "+tmp.notes);
+				}
+				tmp=tmp.next;
+			}}
+			public void SearchByEmailAdress(String val) {
+				Contact tmp=head;
+				while(tmp!=null) {
+					if(tmp.email.equals(val)) {
+					System.out.println("Name: "+tmp.contactName);
+					System.out.println("Phone: "+tmp.phoneNumber);
+					System.out.println("Email: "+tmp.email);
+					System.out.println("Adress: "+tmp.address);
+					System.out.println("Birthday: "+tmp.birthday);
+					System.out.println("Notes: "+tmp.notes);
+					}
+					tmp=tmp.next;
+				}}
+			public void SearchByAdress(String val) {
+				Contact tmp=head;
+				while(tmp!=null) {
+					if(tmp.address.equals(val)) {
+					System.out.println("Name: "+tmp.contactName);
+					System.out.println("Phone: "+tmp.phoneNumber);
+					System.out.println("Email: "+tmp.email);
+					System.out.println("Adress: "+tmp.address);
+					System.out.println("Birthday: "+tmp.birthday);
+					System.out.println("Notes: "+tmp.notes);
+					}
+					tmp=tmp.next;
+				}}
+public void SearchByBirthday(String val) {
+	Contact tmp=head;
+	while(tmp!=null) {
+		if(tmp.birthday.equals(val)) {
+		System.out.println("Name: "+tmp.contactName);
+		System.out.println("Phone: "+tmp.phoneNumber);
+		System.out.println("Email: "+tmp.email);
+		System.out.println("Adress: "+tmp.address);
+		System.out.println("Birthday: "+tmp.birthday);
+		System.out.println("Notes: "+tmp.notes);
+		}
+		tmp=tmp.next;
+	}}
+
 	
 
 }
