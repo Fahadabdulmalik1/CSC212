@@ -37,7 +37,7 @@ public void UI() {
 		l1.insert(s1, s2, s3, s4, s5, s6);
 		System.out.println();
 	}
-	if(ch==2) {
+	else if(ch==2) {
 		System.out.println("Enter search criteria:");
 		int v=0;
 		System.out.println("1. Name ");
@@ -52,22 +52,22 @@ public void UI() {
 			String name=input.next();
 			l1.SearchByName(name);
 		}
-		if(v==2) {
+		else if(v==2) {
 			System.out.print("Enter the contact's PhoneNumber:");
 			String pnumber=input.next();
 			l1.SearchByPhoneNumber(pnumber);
 		}
-		if(v==3) {
+		else if(v==3) {
 			System.out.print("Enter the contact's EmailAdress");
 			String email=input.next();
 			l1.SearchByEmailAdress(email);
 		}
-		if(v==4) {
+		else if(v==4) {
 			System.out.print("Enter the contact's Adress");
 			String adress=input.next();
 			l1.SearchByAdress(adress);
 		}
-		if(v==5) {
+		else if(v==5) {
 			System.out.print("Enter the contact's Birthday");
 			String dob=input.next();
 			l1.SearchByBirthday(dob);
