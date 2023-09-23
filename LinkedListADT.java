@@ -14,14 +14,14 @@ public class LinkedListADT implements Comparable {
 		  current=head=new Contact(contactName, phoneNumber, email, address, birthday, notes);
 	  else {
 		  while(tmp1!=null) {
-			  if(tmp1.contactName.equals(contactName)||tmp1.phoneNumber.equals(phoneNumber))
+			  if(tmp1.getContactName().equals(contactName)||tmp1.getPhoneNumber().equals(phoneNumber))
 				  return;
-			  tmp1=tmp1.next;
+			  tmp1=tmp1.getNext();
 		  }
-		  tmp=current.next;
-		  current.next=new Contact(contactName, phoneNumber, email, address, birthday, notes);
-		  current=current.next;
-		  current.next=tmp;
+		  tmp=current.getNext();
+		  current.setNext(new Contact(contactName, phoneNumber, email, address, birthday, notes));
+		  current=current.getNext();
+		  current.setNext(tmp);
 		  
 	  }
 	  System.out.println("Contact added successfully!");
@@ -33,23 +33,23 @@ public class LinkedListADT implements Comparable {
 			while(tmp!=null) {
 				
 				
-				if(tmp.contactName.equals(name)) {
+				if(tmp.getContactName().equals(name)) {
 					if(tmp==head) {
-						head=head.next;
+						head=head.getNext();
 					}else {
 						Contact tmp1=head;
-						while(tmp1.next!=tmp)
-							tmp1=tmp1.next;
-					tmp1.next=tmp.next;
+						while(tmp1.getNext()!=tmp)
+							tmp1=tmp1.getNext();
+					tmp1.setNext(tmp.getNext());
 					}
-					if(current.next==null)
+					if(current.getNext()==null)
 						current=head;
 					if(tmp==current)
-					current=current.next;
+					current=current.getNext();
 					break;
 				}
 	
-				tmp=tmp.next;
+				tmp=tmp.getNext();
 					
 			}
 			
@@ -59,69 +59,71 @@ public class LinkedListADT implements Comparable {
 	public void SearchByName(String val) {
 		Contact tmp=head;
 		while(tmp!=null) {
-			if(tmp.contactName.equalsIgnoreCase(val)) {
-			System.out.println("Name: "+tmp.contactName);
-			System.out.println("PhoneNumber: "+tmp.phoneNumber);
-			System.out.println("Email: "+tmp.email);
-			System.out.println("Adress: "+tmp.address);
-			System.out.println("Birthday: "+tmp.birthday);
-			System.out.println("Notes: "+tmp.notes);
+			if(tmp.getContactName().equalsIgnoreCase(val)) {
+				System.out.println("Name: "+tmp.getContactName());
+				System.out.println("Phone: "+tmp.getPhoneNumber());
+				System.out.println("Email: "+tmp.getEmail());
+				System.out.println("Adress: "+tmp.getAddress());
+				System.out.println("Birthday: "+tmp.getBirthday());
+				System.out.println("Notes: "+tmp.getNotes());
 			}
-			tmp=tmp.next;
+			tmp=tmp.getNext();
 		}
 	}
 		public void SearchByPhoneNumber(String val) {
 			Contact tmp=head;
 			while(tmp!=null) {
-				if(tmp.phoneNumber.equals(val)) {
-				System.out.println("Name: "+tmp.contactName);
-				System.out.println("Phone: "+tmp.phoneNumber);
-				System.out.println("Email: "+tmp.email);
-				System.out.println("Adress: "+tmp.address);
-				System.out.println("Birthday: "+tmp.birthday);
-				System.out.println("Notes: "+tmp.notes);
+				if(tmp.getPhoneNumber().equals(val)) {
+				System.out.println("Name: "+tmp.getContactName());
+				System.out.println("Phone: "+tmp.getPhoneNumber());
+				System.out.println("Email: "+tmp.getEmail());
+				System.out.println("Adress: "+tmp.getAddress());
+				System.out.println("Birthday: "+tmp.getBirthday());
+				System.out.println("Notes: "+tmp.getNotes());
 				}
-				tmp=tmp.next;
+				tmp=tmp.getNext();
 			}}
 			public void SearchByEmailAdress(String val) {
 				Contact tmp=head;
 				while(tmp!=null) {
-					if(tmp.email.equals(val)) {
-					System.out.println("Name: "+tmp.contactName);
-					System.out.println("Phone: "+tmp.phoneNumber);
-					System.out.println("Email: "+tmp.email);
-					System.out.println("Adress: "+tmp.address);
-					System.out.println("Birthday: "+tmp.birthday);
-					System.out.println("Notes: "+tmp.notes);
+					if(tmp.getEmail().equals(val)) {
+					System.out.println("Name: "+tmp.getContactName());
+					System.out.println("Phone: "+tmp.getPhoneNumber());
+					System.out.println("Email: "+tmp.getEmail());
+					System.out.println("Adress: "+tmp.getAddress());
+					System.out.println("Birthday: "+tmp.getBirthday());
+					System.out.println("Notes: "+tmp.getNotes());
 					}
-					tmp=tmp.next;
+					tmp=tmp.getNext();
 				}}
 			public void SearchByAdress(String val) {
 				Contact tmp=head;
 				while(tmp!=null) {
-					if(tmp.address.equals(val)) {
-					System.out.println("Name: "+tmp.contactName);
-					System.out.println("Phone: "+tmp.phoneNumber);
-					System.out.println("Email: "+tmp.email);
-					System.out.println("Adress: "+tmp.address);
-					System.out.println("Birthday: "+tmp.birthday);
-					System.out.println("Notes: "+tmp.notes);
+					if(tmp.getAddress().equals(val)) {
+					System.out.println("Name: "+tmp.getContactName());
+					System.out.println("Phone: "+tmp.getPhoneNumber());
+					System.out.println("Email: "+tmp.getEmail());
+					System.out.println("Adress: "+tmp.getAddress());
+					System.out.println("Birthday: "+tmp.getBirthday());
+					System.out.println("Notes: "+tmp.getNotes());
 					}
-					tmp=tmp.next;
+					tmp=tmp.getNext();
 				}}
-public void SearchByBirthday(String val) {
-	Contact tmp=head;
-	while(tmp!=null) {
-		if(tmp.birthday.equals(val)) {
-		System.out.println("Name: "+tmp.contactName);
-		System.out.println("Phone: "+tmp.phoneNumber);
-		System.out.println("Email: "+tmp.email);
-		System.out.println("Adress: "+tmp.address);
-		System.out.println("Birthday: "+tmp.birthday);
-		System.out.println("Notes: "+tmp.notes);
-		}
-		tmp=tmp.next;
+			public void SearchByBirthday(String val) {
+				Contact tmp=head;
+				while(tmp!=null) {
+			if(tmp.getBirthday().equals(val)) {
+			System.out.println("Name: "+tmp.getContactName());
+			System.out.println("Phone: "+tmp.getPhoneNumber());
+			System.out.println("Email: "+tmp.getEmail());
+			System.out.println("Adress: "+tmp.getAddress());
+			System.out.println("Birthday: "+tmp.getBirthday());
+			System.out.println("Notes: "+tmp.getNotes());
+			}
+			tmp=tmp.getNext();
 	}}
+
+	
 
 	
 
