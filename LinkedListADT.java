@@ -52,7 +52,8 @@ public class LinkedListADT implements Comparable {
 				tmp=tmp.getNext();
 					
 			}
-			
+					System.out.println("Contact removed successfully!");
+
 		
 		
 	}
