@@ -80,6 +80,11 @@ Scanner input=new Scanner(System.in);
 			}
 			}catch(Exception e) {System.out.println("Invalid input! Choose a number between 1 and 5");}
 		}
+			else if(ch==3) {
+			System.out.println("Enter the contact's name: ");
+			l1.remove(input.next());
+			
+		}
 		
 		}
 		}catch(Exception e){System.out.println("Invalid input! Enter a number between 1 and 8");}
